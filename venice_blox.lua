@@ -1,6 +1,7 @@
 --==================================================================
 --  VENICE HUB  |  Blox Fruits
---  loadstring(game:HttpGet("https://raw.githubusercontent.com/USER/REPO/main/venice_blox.lua"))()
+--  local SRC = "https://raw.githubusercontent.com/VictorGabrielCavalcanteLima/venice-blox/main/venice_blox.lua"
+--  loadstring(game:HttpGet(SRC))()
 --==================================================================
 
 if _G.__VeniceHub then pcall(function() _G.__VeniceHub() end) end
@@ -213,10 +214,9 @@ bind(LP.Idled, function()
     vu:ClickButton2(Vector2.new())
 end)
 
-pcall(function() if setfpscap then setfpscap(60) end end)
 pcall(function()
     if queue_on_teleport then
-        queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/USER/REPO/main/venice_blox.lua"))()]])
+        queue_on_teleport("loadstring(game:HttpGet('" .. SRC .. "'))()")
     end
 end)
 
